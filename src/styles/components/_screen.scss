@@ -1,0 +1,21 @@
+.screen {
+    
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90.07deg, #DFDFD4 0.07%, #7BB1B1 11.84%, #5873B4 49.19%, #9486AB 73.74%, #C7C3CB 98.3%);
+        filter: blur(200px);
+        z-index: 1;
+    }
+    & > * {
+        position: relative;
+        z-index: 2;
+    }
+}
