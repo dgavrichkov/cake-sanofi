@@ -27,6 +27,21 @@
         line-height: 23px;
     }
     &__content {
+        position: relative;
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            left: 0;
+            height: 3px;
+            background-color: #ffffff;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
     }
     &__content-box {
         grid-column: 2 / 6;
