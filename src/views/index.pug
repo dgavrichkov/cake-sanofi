@@ -37,14 +37,15 @@ block content
 			header.header
 				figure.header__logo
 					img(src="images/logo.svg" alt="sanofi logo")
-			div.hall__main
-				button(type="button").hall__video-info Информация о видео
-
-				button(type="button").hall__watch
-					span.hall__watch-icon
-					span.hall__watch-text Посмотреть видео
+			div.hall__main.grid-container
+				div.hall__box
+					img(src="images/vid-thumb.jpg")
+					button(type="button").hall__video-info
+						span Информация #[br] о видео
+					button(type="button").hall__watch
+						span Посмотреть видео
 			div.hall__controls.hall-controls
-				a(href="#").hall-controls__item Эпизод 1
+				a(href="#").hall-controls__item.is-active Эпизод 1
 				a(href="#").hall-controls__item Эпизод 2
 				a(href="#").hall-controls__item Эпизод 3
 				div.hall-controls__caret
