@@ -11,6 +11,7 @@ a {
 body {
     font-family: Helvetica, Arial, sans-serif;
     color: #ffffff;
+    
 }
 
 .grid-container {
@@ -18,4 +19,11 @@ body {
     grid-template-columns: repeat(12, 1fr);
     gap: 20px;
     padding: 0 30px;
+}
+
+.page {
+    overflow-y: scroll;
+    scroll-snap-type: mandatory;
+    scroll-snap-type: y mandatory;
+    max-height: 100vh;
 }
