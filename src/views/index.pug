@@ -12,7 +12,7 @@ block content
 					img(src="images/logo.svg" alt="sanofi logo")
 				div.header__panel
 					a(href="#").header__intranet-link Интранет
-					a(href="#").header__options
+					a(href="#" data-popup-id="help").header__options.js-popup
 						<svg width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M28.461 11.689H26.25c-.234-.8-.553-1.57-.953-2.302l1.564-1.564c.601-.6.601-1.575 0-2.176L24.354 3.14c-.602-.6-1.576-.6-2.177 0l-1.564 1.564c-.731-.4-1.502-.719-2.302-.953V1.539c0-.85-.689-1.539-1.539-1.539h-3.544c-.85 0-1.54.689-1.54 1.539v2.212c-.799.234-1.57.553-2.3.953L7.822 3.14c-.601-.6-1.575-.6-2.176 0L3.14 5.647a1.539 1.539 0 000 2.176l1.564 1.564c-.4.731-.719 1.502-.953 2.302H1.539c-.85 0-1.539.689-1.539 1.539v3.544c0 .85.689 1.54 1.539 1.54h2.212c.234.799.553 1.57.953 2.3L3.14 22.178a1.539 1.539 0 000 2.176l2.507 2.507c.6.6 1.575.6 2.176 0l1.564-1.564c.731.4 1.502.719 2.302.953v2.212c0 .85.689 1.539 1.539 1.539h3.544c.85 0 1.54-.689 1.54-1.539v-2.212c.799-.234 1.57-.553 2.3-.953l1.565 1.564c.6.6 1.575.6 2.176 0l2.507-2.507c.6-.6.6-1.575 0-2.176l-1.564-1.564c.4-.731.719-1.502.953-2.302h2.212c.85 0 1.539-.689 1.539-1.539v-3.544c0-.85-.689-1.54-1.539-1.54zm-13.46 9.404A6.09 6.09 0 018.906 15 6.09 6.09 0 0115 8.907 6.09 6.09 0 0121.093 15 6.09 6.09 0 0115 21.093z" fill="#fff"/></svg>
 					a(href="#").header__favorite
 						<svg width="27" height="25" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M23.94 13.338l-11.03 10.7-10.78-11c-6.79-7 4.24-17.76 11-10.77 7.12-6.84 17.9 4.18 10.81 11.07z" fill="#C02222"/></svg>
@@ -20,7 +20,7 @@ block content
 				div.greet__content-box
 					h1.greet__title Это OneCRM
 					div.greet__text #[b Дорогие коллеги!]#[br] Мы открываем новую главу во взаимодействии с нашими партнерами и клиентами. Со 2 августа мы в Санофи Россия запускаем систему OneCRM — рабочий инструмент полевых сотрудников, который оптимизирует наши ежедневные процессы, сделает работу еще комфортнее и эффективнее, высвободит время на интересные нестандартные задачи. OneCRM поможет нам внедрить единые методы работы в Санофи. 
-					button(type="button").greet__btn
+					button(type="button" data-popup-id="description").greet__btn.js-popup
 						span Это не просто видео 
 			div.greet__screen
 				div.greet__screen-label OneCRM
@@ -40,7 +40,7 @@ block content
 			div.hall__main.grid-container
 				div.hall__box
 					img(src="images/vid-thumb.jpg")
-					button(type="button").hall__video-info
+					button(type="button" data-popup-id="video-description").hall__video-info.js-popup
 						span Информация #[br] о видео
 					button(type="button").hall__watch
 						span Посмотреть видео
@@ -94,7 +94,7 @@ block content
 				figure.footer__crm
 					img(src="images/onesrm.svg")
 		
-		section.screen.popup.popup--description#description
+		section.screen.popup.popup--description#description(data-popup-id="description")
 			button(type="button").popup__close
 			div.popup__inner
 				article.popup-description 
@@ -106,7 +106,7 @@ block content
 							source(srcset="images/desc-3@x1.png 1x, images/desc-3@x2.png 2x")
 							img(src="" alt="")
 
-		section.screen.popup.popup--help#help
+		section.screen.popup.popup--help#help(data-popup-id="help")
 			button(type="button").popup__close
 			div.popup__inner
 				article.popup-help
@@ -114,7 +114,7 @@ block content
 					div.popup-help__item В случае возникновения проблем с работой корпоративных приложений обращаться в ITS Service Portal или по телефону: +7 (495) 721 1413 (доб. 1313) ITS Service Portal работает 24 часа | 7 дней в неделю: sanofiservices.service-now.com/its
 					div.popup-help__item NEO Desk будет вашим основным контактом по телефонной линии для поддержки от ITS, доступной на русском языке:#[br] 8:00 - 20:00 по московскому времени:#[br] 24 часа | 7 дней в неделю:#[br] +7 (495) 721 1413 (доб. 1313)
 		
-		section.screen.popup.popup--videodesc
+		section.screen.popup.popup--videodesc(data-popup-id="video-description")
 			button(type="button").popup__close
 			div.popup__inner
 				article.popup-tab
@@ -124,7 +124,7 @@ block content
 						div.popup-tab__indicator
 							div.popup-tab__indicator-caret
 					div.popup-tab__body
-						div.popup-tab__tab(data-tab-screen="desc")
+						div.popup-tab__tab(data-tab-panel="desc").is-active
 							div.popup-tab__content
 								div.popup__text Катя, Полина и Кирилл – сотрудники Санофи. Их будни очень насыщены: новые профессиональные контакты, множество встреч, работа на результат  и, конечно, стремление помочь людям, нуждающимся в лекарственных препаратах. Годами они выстраивали систему работы с партнерами и клиентами, но в их жизни наступают изменения.
 								div.popup__text Кате, Марине и Кириллу, как и многим сотрудникам Санофи, предстоит пересмотреть свои привычки, учиться и адаптироваться, ведь компания решила внедрить новый инструмент OneCRM.
@@ -133,7 +133,7 @@ block content
 								picture
 									source(srcset="images/desc-1@x1.png 1x, images/desc-1@x2.png 2x")
 									img(src="" alt="")
-						div.popup-tab__tab(data-tab-screen="instruction").is-active
+						div.popup-tab__tab(data-tab-panel="instruction")
 							div.popup-tab__content
 								div.popup__text Смотрите ролик и следите за развитием событий. В определенный момент вам предложат выбрать один из нескольких вариантов действий — решить, как поведет себя герой дальше. От вашего выбора зависит развитие сюжета.
 								div.popup__text Нашим героям, как и всем нам, свойственны ошибки. Дать им второй шанс — отличная идея! Поэтому вы всегда можете вернуться к моменту принятия решения и выбрать другой вариант действий. Чем все закончится — зависит только от вас!
