@@ -12,11 +12,31 @@
         right: 0;
         bottom: 0;
         background: linear-gradient(90.07deg, #DFDFD4 0.07%, #7BB1B1 11.84%, #5873B4 49.19%, #9486AB 73.74%, #C7C3CB 98.3%);
+        background-size: 200% 200%;
         filter: blur(200px);
         z-index: 1;
+        animation: gradient 7s ease-out infinite;
     }
     & > * {
         position: relative;
         z-index: 2;
     }
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+    25% {
+		background-position: 50% 50%;
+    }
+	50% {
+		background-position: 100% 50%;
+	}
+    75% {
+		background-position: 50% 50%;
+    }
+	100% {
+		background-position: 0% 50%;
+	}
 }
