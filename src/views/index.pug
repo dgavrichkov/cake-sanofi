@@ -58,15 +58,16 @@ block content
 					img(src="images/logo.svg" alt="sanofi logo")
 			div.autorization__inner
 				div.autorization__block
-					h2.autorization__title
-					div.autorization__text
-					form.autorization__form
+					h2.autorization__title Добро пожаловать!
+					div.autorization__text Пожалуйста, введите адрес корпоративной почты 
+					form.autorization__form.autorization__form--login.is-success
 						div.autorization__inputbox
 							label.autorization__label 
-								span E-mail
 								input(type="email")
-							div.aurorization__indicator
-						button(type="submit").autorization__btn Отправить
+								span E-mail
+						div.autorization__indicator
+						button(type="submit").autorization__btn 
+							span Отправить
 			div.footer
 				figure.footer__crm
 					img(src="images/onesrm.svg")
@@ -76,16 +77,17 @@ block content
 					img(src="images/logo.svg" alt="sanofi logo")
 			div.autorization__inner
 				div.autorization__block
-					h2.autorization__title
-					div.autorization__text
-					form.autorization__form.autorization__form--password
+					h2.autorization__title Добро пожаловать!
+					div.autorization__text Пожалуйста, введите пароль
+					form.autorization__form.autorization__form--password.is-error
 						div.autorization__inputbox
 							label.autorization__label 
-								span Пароль
 								input(type="password")
-							div.aurorization__indicator
+								span Пароль
+						div.autorization__indicator
 						a(href="#").autorization__back Назад
-						button(type="submit").autorization__btn Отправить
+						button(type="submit").autorization__btn 
+							span Отправить
 						a(href="#").autorization__again отправить пароль еще раз
 			div.footer
 				figure.footer__crm
