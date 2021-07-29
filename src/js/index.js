@@ -50,7 +50,31 @@ const tablist = function() {
     }
 }
 
+const popupInit = function() {
+    const popups = document.querySelectorAll(".popup");
+    const btns = document.querySelectorAll(".js-popup"); 
+    if(popups.length === 0 || btns.length === 0) {
+        return false;
+    }
+    btns.forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const name = btn.dataset.popupId;
+            const currPopup = Array.from(popups).find(popup => popup.dataset.popupId === name);
+            currPopup.classList.add("is-active");
+        });
+    });
+    popups.forEach(popup => {
+        const close = popup.querySelector(".popup__close");
+        close.addEventListener("click", (e) => {
+            e.preventDefault();
+            popup.classList.remove("is-active");
+        });
+    })
+}
+
 window.addEventListener("DOMContentLoaded", function() {
     episodes();
     tablist();
+    popupInit();
 });
