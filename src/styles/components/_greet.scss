@@ -3,6 +3,9 @@
     grid-template-rows: auto 1fr auto;
     position: relative;
     &__screen {
+        @media (max-height: 700px) {
+            width: 50%;
+        }
         position: absolute;
         bottom: -9%;
         right: -9%;
