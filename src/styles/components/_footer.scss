@@ -1,4 +1,7 @@
 .footer {
+    @include to(768px) {
+        display: none;
+    }
     padding: 41px 30px 25px;
     &__crm {
         margin-left: 40px;

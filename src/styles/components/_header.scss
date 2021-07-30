@@ -1,11 +1,58 @@
 .header {
+    @include to(768px) {
+        padding: 20px 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 32px;
+    }
     display: flex;
     padding: 53px 30px 70px;
+
+    &__logo {
+        @include to(768px) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            max-width: 200px;
+        }
+        flex-shrink: 0;
+        max-width: 100%;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__crm {
+        @include from(769px) {
+            display: none;
+        }
+        justify-self: end;
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff;
+        border-radius: 50%;
+    }
+
     &__panel {
+        @include to(768px) {
+            grid-column: 1 / -1;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 20px;
+        }
         display: flex;
         margin-left: auto;
         & > * {
             &:not(:last-child) {
+                @include to(768px) {
+                    margin-right: 0;
+                }
                 margin-right: 17px;
             }
         }
@@ -32,6 +79,9 @@
         }
     }
     &__options {
+        @include to(768px) {
+            display: none;
+        }
         display: flex;
         justify-content: center;
         align-items: center;
@@ -53,6 +103,10 @@
         }
     }
     &__favorite {
+        @include to(768px) {
+            width: 100%;
+            border-radius: 38px;
+        }
         display: flex;
         justify-content: center;
         align-items: center;
@@ -63,11 +117,6 @@
         transition: background-color 0.35s linear;
         svg {
             animation: heartbeat 1s infinite;
-        }
-        @media (hover: hover) {
-            &:hover {
-                // background-color: #000;
-            }
         }
     }
 }

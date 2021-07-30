@@ -5,17 +5,26 @@ const episodes = function() {
         return false;
     }
     const caret = document.querySelector(".hall-controls__caret");
+    let old = Array.from(controls).find(control => control.classList.contains("is-active"));
+    setCaretState(old);
     controls.forEach(item => {
         item.addEventListener("click", function(e) {
             e.preventDefault();
-            const old = Array.from(controls).find(control => control.classList.contains("is-active"));
             old.classList.remove("is-active");
             item.classList.add("is-active");
-            const left = item.offsetLeft;
-            caret.style.left = left + "px";
-            caret.style.width = item.offsetWidth + "px";
+            // const left = item.offsetLeft;
+            // caret.style.left = left + "px";
+            // caret.style.width = item.offsetWidth + "px";
+            old = item;
+            setCaretState(item);
         });
     })
+
+    function setCaretState(item) {
+        const left = item.offsetLeft;
+        caret.style.left = left + "px";
+        caret.style.width = item.offsetWidth + "px";
+    }
 };
 
 const tablist = function() {

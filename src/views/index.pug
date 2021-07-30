@@ -10,6 +10,8 @@ block content
 			header.greet__header.header
 				figure.header__logo
 					img(src="images/logo.svg" alt="sanofi logo")
+				figure.header__crm
+					img(src="images/onesrm.svg")
 				div.header__panel
 					a(href="#").header__intranet-link Интранет
 					a(href="#" data-popup-id="help").header__options.js-popup
@@ -19,6 +21,12 @@ block content
 			div.greet__content.grid-container
 				div.greet__content-box
 					h1.greet__title Это OneCRM
+					div.greet__content-screen
+						figure
+							picture 
+								source(srcset="images/screen1@x2.png 2x, images/screen1@x1.png 1x" media="(min-width: 769px)")
+								source(srcset="images/screen-mobile@x1.png 1x, images/screen-mobile@x2.png 2x" media="(max-width: 768px)")
+								img(src="images/screen1@x1.png")
 					div.greet__text #[b Дорогие коллеги!]#[br] Мы открываем новую главу во взаимодействии с нашими партнерами и клиентами. Со 2 августа мы в Санофи Россия запускаем систему OneCRM — рабочий инструмент полевых сотрудников, который оптимизирует наши ежедневные процессы, сделает работу еще комфортнее и эффективнее, высвободит время на интересные нестандартные задачи. OneCRM поможет нам внедрить единые методы работы в Санофи. 
 					button(type="button" data-popup-id="description").greet__btn.js-popup
 						span Это не просто видео 
@@ -57,6 +65,8 @@ block content
 			header.header
 				figure.header__logo
 					img(src="images/logo.svg" alt="sanofi logo")
+				figure.header__crm
+					img(src="images/onesrm.svg")
 			div.autorization__inner
 				div.autorization__block
 					h2.autorization__title Добро пожаловать!
@@ -76,6 +86,8 @@ block content
 			header.header
 				figure.header__logo
 					img(src="images/logo.svg" alt="sanofi logo")
+				figure.header__crm
+					img(src="images/onesrm.svg")
 			div.autorization__inner
 				div.autorization__block
 					h2.autorization__title Добро пожаловать!

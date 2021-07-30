@@ -1,8 +1,10 @@
 .screen {
-    scroll-snap-align: start;
-    position: relative;
-    height: 100vh;
+    @media (min-width: 769px) {
+        scroll-snap-align: start;
+        height: 100vh;
+    }
     min-height: 700px;
+    position: relative;
     overflow: hidden;
     &::after {
         content: "";

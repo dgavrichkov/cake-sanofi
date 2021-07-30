@@ -26,8 +26,10 @@ body {
 }
 
 .page {
-    overflow-y: scroll;
-    scroll-snap-type: mandatory;
-    scroll-snap-type: y mandatory;
-    max-height: 100vh;
+    @media (min-width: 769px) {
+        overflow-y: scroll;
+        scroll-snap-type: mandatory;
+        scroll-snap-type: y mandatory;
+        max-height: 100vh;
+    }
 }

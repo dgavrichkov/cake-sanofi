@@ -1,4 +1,8 @@
 .greet {
+    @include to(768px) {
+        grid-template-rows: auto 1fr;
+        padding-bottom: 67px;
+    }
     display: grid;
     grid-template-rows: auto 1fr auto;
     position: relative;
@@ -6,6 +10,16 @@
         @media (max-height: 700px) {
             width: 50%;
         }
+        @media (min-height: 830px) {
+
+        }
+        @include to(1280px) {
+            width: 56%;
+        }
+        @include to(768px) {
+            display: none;
+        }
+
         position: absolute;
         bottom: -9%;
         right: -9%;
@@ -28,8 +42,18 @@
         line-height: 23px;
     }
     &__content {
+        @include to(768px) {
+            display: block;
+            padding: 17px 45px 0 35px;
+        }
+        @media (min-height: 830px) {
+            
+        }
         position: relative;
         &::before, &::after {
+            @include to(768px) {
+                display: none;
+            }
             content: "";
             position: absolute;
             width: 100%;
@@ -44,7 +68,28 @@
             bottom: 0;
         }
     }
+    &__content-screen {
+        @include from(769px) {
+            display: none;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(1px -2px 10px rgba(0, 0, 0, 0.25));
+        }
+        margin-bottom: 44px;
+    }
     &__content-box {
+        @include to(1024px) {
+            grid-column: 2 / 7;   
+        }
+        @include to(768px) {
+            padding: 0;
+            display: block;
+        }
+        @media (min-height: 830px) and (max-width: 1024px) {
+            grid-column: 2 / 10;   
+        }
         grid-column: 2 / 6;
         align-self: stretch;
         display: flex;
@@ -54,12 +99,20 @@
     }
 
     &__title {
+        @include to(768px) {
+            font-size: 30px;
+            line-height: 34px;
+        }
         font-weight: bold;
         font-size: 50px;
         line-height: 57px;
         margin-bottom: 17px;
     }
     &__text {
+        @include to(640px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
         font-weight: 400;
         font-size: 16px;
         line-height: 18px;
@@ -68,6 +121,10 @@
         }
     }
     &__btn {
+        @include to(768px) {
+            margin-left: auto;
+            margin-right: auto;
+        }
         margin-top: 42px;
         padding: 0;
         width: 241px;
