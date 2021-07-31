@@ -107,18 +107,22 @@ block content
 					img(src="images/onesrm.svg")
 		
 		section.popup.popup--description#description(data-popup-id="description")
+			div.popup__overlay
 			button(type="button").popup__close
 			div.popup__inner
-				article.popup-description 
-					h2.popup-description__title Это не просто видео 
-					div.popup-description__text Это ролик, в котором вы можете принимать решения вместе с героем, меняя ход событий. Влиять на то, как выстроится сюжет. Здесь нет правильных и неправильных ответов. Каждая сюжетная линия позволит вам вместе с героем пережить определенный опыт и проверить, к чему может привести конкретное решение.
-					div.popup-description__text Пройдя все сюжетные линии, вы узнаете, как оптимально действовать в конкретных жизненных обстоятельствах. Этот квест можно проходить сколько угодно раз. Приступайте!
+				article.popup-description
+					div.popup-description__content
+						h2.popup-description__title Это не просто видео 
+						div.popup-description__text
+							div Это ролик, в котором вы можете принимать решения вместе с героем, меняя ход событий. Влиять на то, как выстроится сюжет. Здесь нет правильных и неправильных ответов. Каждая сюжетная линия позволит вам вместе с героем пережить определенный опыт и проверить, к чему может привести конкретное решение.
+							div Пройдя все сюжетные линии, вы узнаете, как оптимально действовать в конкретных жизненных обстоятельствах. Этот квест можно проходить сколько угодно раз. Приступайте!
 					figure.popup-description__picture
 						picture
 							source(srcset="images/desc-3@x1.png 1x, images/desc-3@x2.png 2x")
 							img(src="" alt="")
 
 		section.popup.popup--help#help(data-popup-id="help")
+			div.popup__overlay
 			button(type="button").popup__close
 			div.popup__inner
 				article.popup-help
@@ -127,6 +131,7 @@ block content
 					div.popup-help__item NEO Desk будет вашим основным контактом по телефонной линии для поддержки от ITS, доступной на русском языке:#[br] 8:00 - 20:00 по московскому времени:#[br] 24 часа | 7 дней в неделю:#[br] +7 (495) 721 1413 (доб. 1313)
 		
 		section.popup.popup--videodesc(data-popup-id="video-description")
+			div.popup__overlay
 			button(type="button").popup__close
 			div.popup__inner
 				article.popup-tab

@@ -1,6 +1,5 @@
 const episodes = function() {
     const controls = document.querySelectorAll(".hall-controls__item");
-    console.log(controls);
     if(controls.length === 0) {
         return false;
     }
@@ -12,13 +11,10 @@ const episodes = function() {
             e.preventDefault();
             old.classList.remove("is-active");
             item.classList.add("is-active");
-            // const left = item.offsetLeft;
-            // caret.style.left = left + "px";
-            // caret.style.width = item.offsetWidth + "px";
             old = item;
             setCaretState(item);
         });
-    })
+    });
 
     function setCaretState(item) {
         const left = item.offsetLeft;
@@ -57,7 +53,7 @@ const tablist = function() {
         tabCaret.style.width = activeTab.offsetWidth + "px";
         tabCaret.style.left = activeTab.offsetLeft + "px";    
     }
-}
+};
 
 const popupInit = function() {
     const popups = document.querySelectorAll(".popup");
@@ -71,16 +67,24 @@ const popupInit = function() {
             const name = btn.dataset.popupId;
             const currPopup = Array.from(popups).find(popup => popup.dataset.popupId === name);
             currPopup.classList.add("is-active");
+            document.body.classList.add("modal-open");
         });
     });
     popups.forEach(popup => {
         const close = popup.querySelector(".popup__close");
+        const overlay = popup.querySelector(".popup__overlay");
         close.addEventListener("click", (e) => {
             e.preventDefault();
             popup.classList.remove("is-active");
+            document.body.classList.remove("modal-open");
         });
-    })
-}
+        overlay.addEventListener("click", (e) => {
+            e.preventDefault();
+            popup.classList.remove("is-active");
+            document.body.classList.remove("modal-open");
+        });
+    });
+};
 
 window.addEventListener("DOMContentLoaded", function() {
     episodes();
