@@ -7,7 +7,7 @@ block variables
 block content
 	div.page
 		main.page__slider.swiper-container
-			div.swiper-wrapper
+			div.swiper-wrapper.page__slider-wrapper
 				section.swiper-slide.screen.greet#greet
 					header.greet__header.header
 						figure.header__logo
@@ -62,53 +62,7 @@ block content
 					div.footer
 						figure.footer__crm
 							img(src="images/onesrm.svg")
-
-		section.screen.autorization#auth-login
-			header.header
-				figure.header__logo
-					img(src="images/logo.svg" alt="sanofi logo")
-				figure.header__crm
-					img(src="images/onesrm.svg")
-			div.autorization__inner
-				div.autorization__block
-					h2.autorization__title Добро пожаловать!
-					div.autorization__text Пожалуйста, введите адрес корпоративной почты 
-					form.autorization__form.autorization__form--login.is-success
-						div.autorization__inputbox
-							label.autorization__label 
-								input(type="email")
-								span E-mail
-						div.autorization__indicator
-						button(type="submit").autorization__btn 
-							span Отправить
-			div.footer
-				figure.footer__crm
-					img(src="images/onesrm.svg")
-		
-		section.screen.autorization#auth-password
-			header.header
-				figure.header__logo
-					img(src="images/logo.svg" alt="sanofi logo")
-				figure.header__crm
-					img(src="images/onesrm.svg")
-			div.autorization__inner
-				div.autorization__block
-					h2.autorization__title Добро пожаловать!
-					div.autorization__text Пожалуйста, введите пароль
-					form.autorization__form.autorization__form--password.is-error
-						div.autorization__inputbox
-							label.autorization__label 
-								input(type="password")
-								span Пароль
-						div.autorization__indicator
-						a(href="#").autorization__back Назад
-						button(type="submit").autorization__btn 
-							span Отправить
-						a(href="#").autorization__again отправить пароль еще раз
-			div.footer
-				figure.footer__crm
-					img(src="images/onesrm.svg")
-		
+					
 		section.popup.popup--description#description(data-popup-id="description")
 			div.popup__overlay
 			button(type="button").popup__close
@@ -163,4 +117,5 @@ block content
 									img(src="" alt="")
 
 block scripts
+	script(src="js/swiper-bundle.js")
 	script(src="js/main.js")

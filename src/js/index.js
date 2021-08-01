@@ -1,3 +1,53 @@
+const screensSlider = function() {
+    const container = document.querySelector(".page__slider");
+    const wrapper = container.querySelector(".page__slider-wrapper");
+    const slides = container.querySelectorAll(".screen");
+    if(window.innerWidth > 768) {
+        var swiper = new Swiper(".page__slider", { // eslint-disable-line
+            direction: "vertical",
+            slidesPerView: 1,
+            mousewheel: true,
+            on: {
+                init: function() {
+                    this.slides[this.realIndex].classList.add("is-animate");
+                }
+            }
+        });
+    
+        swiper.on("slideChange", function() {
+            console.log(swiper.previousIndex);
+            swiper.slides[swiper.previousIndex].classList.remove("is-animate");
+        });
+        swiper.on("slideChangeTransitionEnd", function() {
+            swiper.slides[swiper.realIndex].classList.add("is-animate");
+        });
+
+        window.addEventListener("resize", () => {
+            if(window.innerWidth < 768) {
+                swiper.destroy();
+                container.classList.remove("swiper-container");
+                wrapper.classList.remove("swiper-wrapper");
+                slides.forEach(slide => {
+                    slide.classList.remove("swiper-slide");
+                });
+            } else {
+                container.classList.add("swiper-container");
+                wrapper.classList.add("swiper-wrapper");
+                slides.forEach(slide => {
+                    slide.classList.add("swiper-slide");
+                });
+                swiper.init();
+            }
+        });
+    } else {
+        container.classList.remove("swiper-container");
+        wrapper.classList.remove("swiper-wrapper");
+        slides.forEach(slide => {
+            slide.classList.remove("swiper-slide");
+        });
+    }
+};
+
 const episodes = function() {
     const controls = document.querySelectorAll(".hall-controls__item");
     if(controls.length === 0) {
@@ -87,11 +137,12 @@ const popupInit = function() {
 };
 
 window.addEventListener("DOMContentLoaded", function() {
+    screensSlider();
     episodes();
     tablist();
     popupInit();
 });
 
-window.addEventListener("load", () => {
+window.addEventListener("load", function() {
     document.body.classList.add("is-loaded");
 });

@@ -8,7 +8,7 @@
 	opacity: 0;
 	transition: opacity 0.7s ease-out;
 	// transition-delay: 0.1s;
-	body.is-loaded &{
+	.is-animate &{
 		opacity: 1;
 	}
 
