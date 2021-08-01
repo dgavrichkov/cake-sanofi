@@ -1,4 +1,5 @@
 const screensSlider = function() {
+    const page = document.querySelector(".page");
     const container = document.querySelector(".page__slider");
     const wrapper = container.querySelector(".page__slider-wrapper");
     const slides = container.querySelectorAll(".screen");
@@ -7,18 +8,22 @@ const screensSlider = function() {
             direction: "vertical",
             slidesPerView: 1,
             mousewheel: true,
+            speed: 500,
             on: {
                 init: function() {
                     this.slides[this.realIndex].classList.add("is-animate");
                 }
             }
         });
-    
-        swiper.on("slideChange", function() {
-            console.log(swiper.previousIndex);
+        swiper.on("beforeTransitionStart", function() {
             swiper.slides[swiper.previousIndex].classList.remove("is-animate");
+            page.classList.add("is-process");
+        });
+        swiper.on("slideChange", function() {
+            // swiper.slides[swiper.realIndex].classList.add("is-animate");
         });
         swiper.on("slideChangeTransitionEnd", function() {
+            page.classList.remove("is-process");
             swiper.slides[swiper.realIndex].classList.add("is-animate");
         });
 

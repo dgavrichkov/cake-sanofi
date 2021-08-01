@@ -1,11 +1,19 @@
 .autorization {
+	@media (min-width: 769px) {
+		height: 100vh;
+	}
 	@include to(768px) {
 		min-height: 500px;
 		height: 100vh;
 	}
 
 	position: relative;
-
+	min-height: 700px;
+	overflow: hidden;
+	&>* {
+		position: relative;
+		z-index: 2;
+	}
 	.header {
 		@include to(768px) {
 			z-index: 4;
