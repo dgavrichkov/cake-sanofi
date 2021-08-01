@@ -91,3 +91,7 @@ window.addEventListener("DOMContentLoaded", function() {
     tablist();
     popupInit();
 });
+
+window.addEventListener("load", () => {
+    document.body.classList.add("is-loaded");
+});

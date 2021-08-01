@@ -128,9 +128,6 @@
 	}
 
 	&__form {
-		// @include from(769px) {
-		// 	padding-right: 61px;
-		// }
 		display: grid;
 		grid-template-columns: 1fr auto 1fr;
 		column-gap: 10px;
