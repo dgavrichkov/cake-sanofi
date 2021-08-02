@@ -9,6 +9,7 @@ const screensSlider = function() {
             slidesPerView: 1,
             mousewheel: true,
             speed: 500,
+            allowTouchMove: false,
             on: {
                 init: function() {
                     this.slides[this.realIndex].classList.add("is-animate");
