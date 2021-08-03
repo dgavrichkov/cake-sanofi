@@ -251,9 +251,16 @@
 			outline: none;
 		}
 
-		input:focus+span {
+		input:focus+span, input:active+span, input:valid+span {
 			opacity: 0;
 			pointer-events: none;
+		}
+
+		&--filled {
+			span {
+				opacity: 0;
+				pointer-events: none;
+			}
 		}
 	}
 
