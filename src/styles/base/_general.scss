@@ -40,11 +40,14 @@ body {
 		position: relative;
 		height: 100vh;
 	}
-
+	background: linear-gradient(90.07deg, #DFDFD4 0.07%, #7BB1B1 11.84%, #5873B4 49.19%, #9486AB 73.74%, #C7C3CB 98.3%);
 	&__slider-wrapper {
 		transition-delay: 0.3s;
 	}
 	&::after {
+		@include to(640px) {
+			animation: gradient 10s ease-out infinite;
+		}
 		content: "";
 		position: absolute;
 		top: 0;
