@@ -1,5 +1,5 @@
 .hall {
-	@include to(768px) {
+	@include to(1024px) {
 		display: block;
 		min-height: auto;
 		overflow: visible;
@@ -10,13 +10,13 @@
 	position: relative;
 
 	&__main {
-		@include to(768px) {
+		@include to(1024px) {
 			padding: 0;
 		}
 	}
 
 	&__box {
-		@include to(768px) {
+		@include to(1024px) {
 			display: block;
 			width: 100%;
 			// height: 500px;
@@ -52,7 +52,7 @@
 			.is-animate &{
 				opacity: 1;
 			}
-			@include to(768px) {
+			@include to(1024px) {
 				body.is-loaded &{
 					opacity: 1;
 				}
@@ -61,7 +61,7 @@
 	}
 
 	&__watch {
-		@include to(768px) {
+		@include to(1024px) {
 			span {
 				display: none;
 			}
@@ -95,14 +95,14 @@
 		.is-animate &{
 			opacity: 1;
 		}
-		@include to(768px) {
+		@include to(1024px) {
 			body.is-loaded &{
 				opacity: 1;
 			}
 		}
 
 		&::before {
-			@include to(768px) {
+			@include to(1024px) {
 				height: 49px;
 				width: 49px;
 			}
@@ -154,7 +154,7 @@
 	}
 
 	&__video-info {
-		@include to(768px) {
+		@include to(1024px) {
 			width: 94px;
 			height: 94px;
 			font-size: 13px;
@@ -187,7 +187,7 @@
 		.is-animate &{
 			opacity: 1;
 		}
-		@include to(768px) {
+		@include to(1024px) {
 			body.is-loaded &{
 				opacity: 1;
 			}
@@ -232,7 +232,7 @@
 	}
 
 	.header {
-		@include to(768px) {
+		@include to(1024px) {
 			display: none;
 		}
 
@@ -241,7 +241,7 @@
 	}
 
 	.footer {
-		@include to(768px) {
+		@include to(1024px) {
 			display: none;
 		}
 
@@ -251,7 +251,7 @@
 }
 
 .hall-controls {
-	@include to(768px) {
+	@include to(1024px) {
 		position: relative;
 		transform: none;
 		background: #fff;
@@ -266,7 +266,7 @@
 	.is-animate &{
 		opacity: 1;
 	}
-	@include to(768px) {
+	@include to(1024px) {
 		body.is-loaded &{
 			opacity: 1;
 		}
@@ -286,7 +286,7 @@
 	z-index: 4;
 
 	&__item {
-		@include to(768px) {
+		@include to(1024px) {
 			font-size: 14px;
 			line-height: 16px;
 			padding: 0 16px;
