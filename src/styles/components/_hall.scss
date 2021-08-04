@@ -74,12 +74,12 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		padding: 0;
-		width: 241px;
+		width: 214px;
 		height: 52px;
 
 		font-weight: bold;
-		font-size: 14px;
-		line-height: 16px;
+		font-size: 16px;
+		line-height: 18px;
 
 		display: flex;
 		align-items: center;
@@ -209,6 +209,11 @@
 			opacity: 0.5;
 			border-radius: 50%;
 			background: transparent;
+		}
+
+		&:active {
+			outline: none;
+			user-select: none;
 		}
 
 		@media (hover: hover) {

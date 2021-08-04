@@ -26,7 +26,6 @@
 		top: 0;
 		right: 0;
 		height: 100%;
-		background: rgba(0, 0, 0, 0.6);
 		width: 36%;
 		overflow: hidden;
 		transition: transform 0.5s ease-out;
@@ -35,7 +34,7 @@
 		z-index: 2;
 
 		@supports not ((backdrop-filter: blur(20px))) {
-			background: rgba(0, 0, 0, 0.9);
+			background: rgba(0, 0, 0, 0.6);
 		}
 		&::after {
 			content: "";

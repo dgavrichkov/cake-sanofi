@@ -65,11 +65,9 @@
 			left: 0;
 
 			opacity: 0.5;
-			// transform: translate(-5%, -5%);
 			transition: opacity 1.7s linear, transform 0.7s ease-out;
 			body.is-loaded & {
 				opacity: 1;
-				// transform: translate(0, 0);
 			}
 		}
 	}
@@ -96,6 +94,8 @@
 		opacity: 0;
 		transform: translateX(20%);
 		transition: opacity 0.5s ease-out, transform 0.5s ease-out 0.1s;
+
+		overflow: hidden;
 
 		body.is-loaded & {
 			opacity: 1;
@@ -164,7 +164,9 @@
 
 		&.is-success {
 			@include to(768px) {
+				padding-right: 0;
 			}
+
 			padding-right: 61px;
 
 			.autorization__indicator {
@@ -175,14 +177,14 @@
 		}
 
 		&.is-error {
+			@include to(768px) {
+				padding-right: 0;
+			}
 			padding-right: 61px;
-
-
 			.autorization__indicator {
 				opacity: 1;
 				background-image: url(../images/error.svg);
 			}
-
 			.autorization__label span {
 				color: #FF1313;
 			}
@@ -196,7 +198,7 @@
 
 		&--password {
 			.autorization__label span::before {
-				background-image: url(../images/password.svg);
+				background-image: url(../images/password.png);
 			}
 		}
 	}
@@ -213,6 +215,9 @@
 		position: relative;
 
 		span {
+			font-weight: bold;
+			font-size: 16px;
+			line-height: 18px;
 			position: absolute;
 			display: flex;
 			align-items: center;
@@ -245,6 +250,9 @@
 			font-size: 16px;
 			line-height: 18px;
 			padding: 0 17px;
+			@include to(640px) {
+				padding-right: 65px;
+			}
 		}
 
 		input:focus-visible {
@@ -291,7 +299,8 @@
 		cursor: pointer;
 		overflow: hidden;
 		justify-self: center;
-
+		font-size: 14px;
+		line-height: 16px;
 		&::before {
 			content: "";
 			background-color: #2289BC;

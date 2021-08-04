@@ -7,13 +7,18 @@ const screensSlider = function() {
     const wrapper = container.querySelector(".page__slider-wrapper");
     const slides = container.querySelectorAll(".screen");
     
-    if(window.innerWidth > 768) {
+    if(window.innerWidth > 1024) {
         var swiper = new Swiper(".page__slider", { // eslint-disable-line
             direction: "vertical",
             slidesPerView: 1,
             mousewheel: true,
             speed: 500,
-            allowTouchMove: false,
+            allowTouchMove: true,
+            breakpoints: {
+                1920: {
+                    allowTouchMove: false
+                }
+            },
             on: {
                 init: function() {
                     this.slides[this.realIndex].classList.add("is-animate");
@@ -31,7 +36,7 @@ const screensSlider = function() {
         });
 
         window.addEventListener("resize", () => {
-            if(window.innerWidth < 768) {
+            if(window.innerWidth < 1024) {
                 swiper.destroy();
                 container.classList.remove("swiper-container");
                 wrapper.classList.remove("swiper-wrapper");
