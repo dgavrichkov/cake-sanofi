@@ -23,7 +23,9 @@
 		@include to(1400px) {
 			width: 67%;
 		}
-
+		@include to(1366px) {
+			width: 60%;
+		}
 		@include to(1280px) {
 			width: 56%;
 		}

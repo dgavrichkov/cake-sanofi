@@ -25,13 +25,13 @@ const screensSlider = function() {
                 }
             }
         });
-        swiper.on("beforeTransitionStart", function() {
+        swiper.on("slideChangeTransitionStart", function() {
             swiper.slides[swiper.previousIndex].classList.remove("is-animate");
-            page.classList.add("is-process");
+            // page.classList.add("is-process");
         });
 
         swiper.on("slideChangeTransitionEnd", function() {
-            page.classList.remove("is-process");
+            // page.classList.remove("is-process");
             swiper.slides[swiper.realIndex].classList.add("is-animate");
         });
 
