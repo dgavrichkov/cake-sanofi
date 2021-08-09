@@ -17,16 +17,8 @@
 
 	&__box {
 		@include to(1024px) {
-			display: block;
-			width: 100%;
 			margin: 0;
 			grid-column: 1 / -1;
-
-			&::after {
-				content: "";
-				display: block;
-				padding-top: 55%;
-			}
 		}
 
 		grid-column: 2 / -2;
@@ -72,6 +64,7 @@
 		&::before {
 			padding-top: 56%;
 		}
+
 		@supports not (aspect-ratio: 16 / 9) {
 			width: 100vh;
 			&::before {
