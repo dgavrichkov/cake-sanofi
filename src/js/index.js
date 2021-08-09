@@ -1,34 +1,42 @@
 const screensSlider = function() {
     const page = document.querySelector(".page");
     const container = document.querySelector(".page__slider");
+    if(!page || !container) {
+        return;
+    }
     const wrapper = container.querySelector(".page__slider-wrapper");
     const slides = container.querySelectorAll(".screen");
-    if(window.innerWidth > 768) {
+    
+    if(window.innerWidth > 1024) {
         var swiper = new Swiper(".page__slider", { // eslint-disable-line
             direction: "vertical",
             slidesPerView: 1,
             mousewheel: true,
             speed: 500,
+            allowTouchMove: true,
+            breakpoints: {
+                1920: {
+                    allowTouchMove: false
+                }
+            },
             on: {
                 init: function() {
                     this.slides[this.realIndex].classList.add("is-animate");
                 }
             }
         });
-        swiper.on("beforeTransitionStart", function() {
+        swiper.on("slideChangeTransitionStart", function() {
             swiper.slides[swiper.previousIndex].classList.remove("is-animate");
-            page.classList.add("is-process");
+            // page.classList.add("is-process");
         });
-        swiper.on("slideChange", function() {
-            // swiper.slides[swiper.realIndex].classList.add("is-animate");
-        });
+
         swiper.on("slideChangeTransitionEnd", function() {
-            page.classList.remove("is-process");
+            // page.classList.remove("is-process");
             swiper.slides[swiper.realIndex].classList.add("is-animate");
         });
 
         window.addEventListener("resize", () => {
-            if(window.innerWidth < 768) {
+            if(window.innerWidth < 1024) {
                 swiper.destroy();
                 container.classList.remove("swiper-container");
                 wrapper.classList.remove("swiper-wrapper");
@@ -141,11 +149,28 @@ const popupInit = function() {
     });
 };
 
+const inputHandler = function() {
+    const inputs = document.querySelectorAll(".autorization__inputbox input");
+    if(!inputs.length === 0) {
+        return;
+    }
+    inputs.forEach(input => {
+        input.addEventListener("change", () => {
+            if(input.value) {
+                input.parentElement.classList.add("autorization__label--filled")
+            } else {
+                input.parentElement.classList.remove("autorization__label--filled")
+            }
+        });
+    })
+}
+
 window.addEventListener("DOMContentLoaded", function() {
     screensSlider();
     episodes();
     tablist();
     popupInit();
+    inputHandler();
 });
 
 window.addEventListener("load", function() {
